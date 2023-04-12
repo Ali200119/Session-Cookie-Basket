@@ -18,6 +18,10 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
+        HttpContext.Session.SetString("name", "Ali");
+
+
+
         IEnumerable<Slider> sliders = await _context.Sliders.Where(s => !s.SoftDelete).ToListAsync();
         SliderInfo sliderInfo = await _context.SliderInfo.Where(si => !si.SoftDelete).FirstOrDefaultAsync();
         About about = await _context.Abouts.Where(a => !a.SoftDelete).Include(a => a.Advantages).FirstOrDefaultAsync();
@@ -45,5 +49,12 @@ public class HomeController : Controller
         };
 
         return View(homeVM);
+    }
+
+    public async Task<IActionResult> GetDataFromSession()
+    {
+        var sessionData = HttpContext.Session.GetString("name");
+
+        return Json(sessionData);
     }
 }
