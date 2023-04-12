@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OE9bIWqEHGx02GtiguZYpzPyd0SaFBouplHzJMw/OSL4FmHDzaStarlV8PEi2JOSWMX3kfBRPvBsgbC1Zeor+w==",
+  "dgSpecHash": "7NEdobNOzhWPJnjja4uQ3dy/grlVlWBKc1tmI5NH6ILQCknmRsUnpBwvAx/Q5FPau6CBkasBTIMEj19LxHLTeQ==",
   "success": true,
   "projectFilePath": "/Users/ali200119/Desktop/Session-Cookie-Basket/Fiorello/Fiorello.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "/Users/ali200119/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "/Users/ali200119/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/ali200119/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/Users/ali200119/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/ali200119/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/ali200119/.nuget/packages/system.configuration.configurationmanager/4.7.0/system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "/Users/ali200119/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

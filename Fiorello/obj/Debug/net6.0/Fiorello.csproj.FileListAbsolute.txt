@@ -134,3 +134,4 @@
 /Users/ali200119/Desktop/Session-Cookie-Basket/Fiorello/obj/Debug/net6.0/Fiorello.pdb
 /Users/ali200119/Desktop/Session-Cookie-Basket/Fiorello/obj/Debug/net6.0/Fiorello.genruntimeconfig.cache
 /Users/ali200119/Desktop/Session-Cookie-Basket/Fiorello/obj/Debug/net6.0/ref/Fiorello.dll
+/Users/ali200119/Desktop/Session-Cookie-Basket/Fiorello/bin/Debug/net6.0/Newtonsoft.Json.dll

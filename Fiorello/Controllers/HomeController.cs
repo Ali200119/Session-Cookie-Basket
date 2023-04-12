@@ -4,6 +4,7 @@ using Fiorello.Models;
 using Fiorello.Data;
 using Microsoft.EntityFrameworkCore;
 using Fiorello.ViewModels;
+using Newtonsoft.Json;
 
 namespace Fiorello.Controllers;
 
@@ -18,7 +19,20 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        HttpContext.Session.SetString("name", "Ali");
+        //HttpContext.Session.SetString("name", "Ali");
+
+        ////Response.Cookies.Append("surname", "Talibov");
+
+        //Response.Cookies.Append("surname", "Talibov", new CookieOptions { MaxAge = TimeSpan.FromMinutes(30)});
+
+        //Book book = new Book
+        //{
+        //    Id = 1,
+        //    Name = "Xosrov ve Shirin"
+        //};
+
+        //Response.Cookies.Append("book", JsonConvert.SerializeObject(book));
+
 
 
 
@@ -51,10 +65,22 @@ public class HomeController : Controller
         return View(homeVM);
     }
 
-    public async Task<IActionResult> GetDataFromSession()
-    {
-        var sessionData = HttpContext.Session.GetString("name");
+    //public async Task<IActionResult> GetDataFromSession()
+    //{
+    //    //var sessionData = HttpContext.Session.GetString("name");
 
-        return Json(sessionData);
-    }
+    //    //var cookieData = Request.Cookies["surname"];
+
+    //    //return Json($"{sessionData} {cookieData}");
+
+    //    var objectData = JsonConvert.DeserializeObject<Book>(Request.Cookies["book"]);
+
+    //    return Json(objectData);
+    //}
 }
+
+//public class Book
+//{
+//    public int Id { get; set; }
+//    public string Name { get; set; }
+//}
