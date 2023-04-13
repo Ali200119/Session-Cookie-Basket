@@ -14,6 +14,7 @@
     <None Remove="Views\Home\" />
     <None Remove="Data\" />
     <None Remove="ViewModels\" />
+    <None Remove="Views\Basket\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -21,6 +22,7 @@
     <Folder Include="wwwroot\" />
     <Folder Include="Data\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\Basket\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

@@ -1,0 +1,48 @@
+﻿@model List<Product>
+
+@{
+    decimal totalPrice = 0;
+}
+
+<div class="container">
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Count</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td><img style="border-radius: 50%" src="~/img/@product.ProductImages.FirstOrDefault(pi => pi.IsMain)?.Name" width="60px" height="60px" /></td>
+                    <td>@product.Name</td>
+                    <td>$@product.Price</td>
+                    <td>@product.Count</td>
+
+                    @{
+                        totalPrice = product.Count * product.Price;
+                    }
+
+                    <td>@totalPrice</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @{
+        decimal grandTotal = 0;
+
+        foreach (var product in Model)
+        {
+            grandTotal += product.Count * product.Price;
+        }
+    }
+
+    <h1 class="mt-5 mb-5">Grand Total: $@grandTotal</h1>
+
+</div>

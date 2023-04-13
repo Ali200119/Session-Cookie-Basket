@@ -33,6 +33,20 @@ public class HomeController : Controller
 
         //Response.Cookies.Append("book", JsonConvert.SerializeObject(book));
 
+        int basketCount;
+
+        if (Request.Cookies["basket"] != null)
+        {
+            basketCount = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]).Count;
+        }
+
+        else
+        {
+            basketCount = 0;
+        }
+
+        ViewBag.BasketCount = basketCount;
+
 
 
 
@@ -63,6 +77,55 @@ public class HomeController : Controller
         };
 
         return View(homeVM);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> AddBasket(int? id)
+    {
+        if (id is null) return BadRequest();
+        Product dbProduct = await _context.Products.FindAsync(id);
+
+        if (dbProduct is null) return NotFound();
+
+
+
+
+        List<BasketVM> basket;
+
+        if (Request.Cookies["basket"] != null)
+        {
+            basket = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
+        }
+
+        else
+        {
+            basket = new List<BasketVM>();
+        }
+
+
+
+        BasketVM existedProduct = basket.FirstOrDefault(b => b.Id == dbProduct.Id);
+
+
+
+        if (existedProduct != null)
+        {
+            existedProduct.Count++;
+        }
+
+        else
+        {
+            basket.Add(new BasketVM
+            {
+                Id = dbProduct.Id,
+                Count = 1
+            });
+        }
+
+        Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+
+        return RedirectToAction(nameof(Index));
     }
 
     //public async Task<IActionResult> GetDataFromSession()
